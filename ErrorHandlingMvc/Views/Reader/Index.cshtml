@@ -1,0 +1,28 @@
+﻿@model ErrorHandlingLib.Models.DataItemModel
+
+@{
+    ViewData["Title"] = "Reader Index Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Reader Index Page</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Some Data</td>
+            </tr>
+        </thead>
+
+        @foreach (var dataItem in Model.DataItems)
+        {
+        <tr>
+            <td>@dataItem.Id</td>
+            <td>@dataItem.SomeData</td>
+        </tr>
+        }
+    </table>
+
+</div>
+
