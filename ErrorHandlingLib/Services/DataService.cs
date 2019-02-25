@@ -22,13 +22,19 @@ namespace ErrorHandlingLib.Services
             var data1 = new DataItem
             {
                 Id = 1,
-                SomeData = "data 1"
+                SomeData = "data 1 initialized"
             };
 
             var data2 = new DataItem
             {
                 Id = 2,
-                SomeData = "data 2"
+                SomeData = "data 2 initialized"
+            };
+
+            var data3 = new DataItem
+            {
+                Id = 3,
+                SomeData = "data 3 initialized"
             };
 
             // get data from file if possible
@@ -51,9 +57,13 @@ namespace ErrorHandlingLib.Services
             {
                 data2.SomeData = $"Generic Error: {exception.Message}";
             }
+            finally
+            {
+                data3.SomeData = "All done!";
+            }
 
 
-            return Task.FromResult(new[] { data1, data2 });
+            return Task.FromResult(new[] { data1, data2, data3 });
         }
     }
 }
