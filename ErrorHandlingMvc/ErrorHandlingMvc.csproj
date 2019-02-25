@@ -5,6 +5,10 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\data\datafile.txt" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -14,6 +18,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ErrorHandlingLib\ErrorHandlingLib.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\data\datafile.txt" />
   </ItemGroup>
 
 </Project>
